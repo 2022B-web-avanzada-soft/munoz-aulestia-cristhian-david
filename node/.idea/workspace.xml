@@ -36,6 +36,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "19.1.0",
     "javascript.nodejs.core.library.typings.version": "18.11.9",
+    "last_opened_file_path": "C:/Users/criss/GitHub/munoz-aulestia-cristhian-david/node",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,6 +46,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Node.js.02-arreglos.js">
+    <configuration name="01-variables.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-javascript/01-variables.js" working-dir="$PROJECT_DIR$/01-javascript">
+      <method v="2" />
+    </configuration>
+    <configuration name="02-arreglos.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-javascript/02-arreglos.js" working-dir="$PROJECT_DIR$/01-javascript">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.02-arreglos.js" />
+        <item itemvalue="Node.js.01-variables.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,7 +68,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668465384981</updated>
-      <workItem from="1668465386219" duration="1639000" />
+      <workItem from="1668465386219" duration="959000" />
+      <workItem from="1668719799890" duration="4394000" />
+      <workItem from="1668724344962" duration="1350000" />
     </task>
     <servers />
   </component>
