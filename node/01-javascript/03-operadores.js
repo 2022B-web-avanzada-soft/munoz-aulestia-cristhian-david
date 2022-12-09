@@ -62,7 +62,7 @@ const respuestaFind = arreglo
             console.log('valorActual', valorActual);
             console.log('indiceActual', indiceActual);
             console.log('arregloCompleto', arregloCompleto);
-            return valorACtual.nota <= 5; //EXPRESION = = =
+            return valorActual.nota <= 5; //EXPRESION = = =
         }
     );
 console.log('respuestaFind', respuestaFind)

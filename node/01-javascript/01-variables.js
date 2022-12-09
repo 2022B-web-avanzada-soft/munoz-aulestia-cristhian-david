@@ -86,6 +86,7 @@ const crissth = {
 };
 
 console.log(crissth);
+console.log(typeof crissth);
 
 //Acceder a las propiedades del objecto
 crissth.nombre; //"Cristhian"
@@ -123,8 +124,8 @@ let edadDavid = edadCrissth; // Guardamos una primitiva en otra variable
 console.log(edadCrissth);//22
 console.log(edadDavid); //22
 edadCrissth = edadDavid + 1;
-console.log(edadCrissth); //22
-console.log(edadDavid); //23
+console.log(edadCrissth); //23
+console.log(edadDavid); //22
 
 //Variables por Referencias: object ({},[])
 let notas = {
@@ -133,7 +134,7 @@ let notas = {
 let  notasSegundoBimestre = notas;
 notasSegundoBimestre.total = notasSegundoBimestre.total + 1;
 console.log(notas);
-console.log(notasSegundoBimestre);
+console.log(notasSegundoBimestre.total);
 //Como clonar objetos
 let notasTercerBimestre = Object.assign({}, notas);
 //Object.assign([], arreglo);
