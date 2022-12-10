@@ -63,7 +63,7 @@ fs.readFile(
 file1 = file1+file2;
 
 console.log(file1);
-/*
+
 fs.writeFile(
     './06-nuevo-archivo.txt',
     file1= file1 + file2,
@@ -74,4 +74,39 @@ fs.writeFile(
             console.log('Exito en la escritura en el nuevo archivo');
         }
     }
-);*/
+);
+fs.readFile(
+    './06-ejem plo.txt',
+    'utf-8',
+    (errorLecturaPrimerArchivo, contenidoPrimerArchivo) => {
+        if (errorLecturaPrimerArchivo) {
+            console.error(errorLecturaPrimerArchivo);
+            throw new Error(' Error leyendo primer archivo');
+        } else {
+            fs.readFile(
+                './O1-variables.js', // Nombre o path det archivo
+                'utf-8', // codificacion
+                (errorLecturaSequndoArchivo, contenidoSequndoArchivo) => {
+                    if (errorLecturaSequndoArchivo) {
+                        console.error(errorLecturaSequndoArchivo);
+                        throw new Error(' Error leyendo primer archivo');
+                    } else {
+                        const nuevoContenido = contenidoPrimerArchivo + contenidoSequndoArchivo;
+                        fs.writeFile(
+                            ' ./Oó-nuevo-archivo. tXt',
+                            nuevoContenido,
+                            (errorEscritura) => {
+                                if (errorEscritura) {
+                                    console.error(errorEscritura);
+                                    throw new Error(' Error escribiendo nuevo archivo');
+                                } else {
+                                    console.log(' Completado ');
+                                }
+                            }
+                        );
+                    }
+                }
+            );
+        }
+    }
+);
