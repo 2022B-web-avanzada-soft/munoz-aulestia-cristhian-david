@@ -46,7 +46,14 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Node.js.08-promesas.js">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node" />
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript" />
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript\proyecto-node" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="04-funciones.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-javascript/04-funciones.js" working-dir="$PROJECT_DIR$/01-javascript">
       <method v="2" />
     </configuration>
@@ -91,7 +98,8 @@
       <workItem from="1670034995608" duration="3652000" />
       <workItem from="1670102217485" duration="3261000" />
       <workItem from="1670540152392" duration="1286000" />
-      <workItem from="1670620146740" duration="6228000" />
+      <workItem from="1670620146740" duration="7120000" />
+      <workItem from="1671139389847" duration="5847000" />
     </task>
     <servers />
   </component>

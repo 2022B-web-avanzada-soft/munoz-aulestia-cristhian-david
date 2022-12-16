@@ -41,16 +41,42 @@ function escribirArchivos(path, contenidoArchivo){
     );
 }
 
-function ejercicio08(path, contenidoArchivo){
+function ejercicio08(path, contenidoNuevo){
     return leerArchivos(path)
         .then(
-            (contenido)=>{
-                return escribirArchivos(path,contenido + contenidoArchivo);
+            (contenidoOriginal)=>{
+                return escribirArchivos(path,contenidoOriginal + contenidoNuevo);
             }
         )
 
 }
 
 ejercicio08('06-ejemplo.txt', ':) lo logramos!')
-.then()
-.catch()
+
+
+//ASINC & AWAIT
+//Reglas
+//1) Estar dentro de una duncion (nombrada o anonima)
+//2) Agregar la palabra 'async' anstes de la declaracion de la funcion
+//3) AGREGAR la palabra 'await' antes de la declaracion de una promesa
+async function asyncAwaitUno(path, nuevoContenido){
+    //Si sabemos que en la promesa puede haber una reject, usamos try y catch
+    try{
+        const respuestaContenidoArchivoOriginal = await leerArchivos(path);
+        //de aqui no avanza hasta que logre leer la promesa
+
+        await escribirArchivos(path, respuestaContenidoArchivoOriginal + nuevoContenido);
+        await escribirArchivos(path, (leerArchivos(path)) + nuevoContenido);
+    }catch (error){
+        console.error(error);
+    }
+
+}
+asyncAwaitUno('06-ejemplo.txt', ':) lo logramos!').then().catch()
+
+const asyncAwaitDos = async function (){
+
+}
+const asyncAwaitTres = async ()=>{
+
+}
