@@ -15,6 +15,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -110,7 +111,8 @@
       <workItem from="1672323019553" duration="2954000" />
       <workItem from="1672351799138" duration="6881000" />
       <workItem from="1672411638287" duration="1294000" />
-      <workItem from="1672602188532" duration="6340000" />
+      <workItem from="1672602188532" duration="6927000" />
+      <workItem from="1672749502077" duration="4643000" />
     </task>
     <servers />
   </component>
@@ -132,5 +134,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/react-nextjs/components/a_estilos/EstilosEjemplo.tsx</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
