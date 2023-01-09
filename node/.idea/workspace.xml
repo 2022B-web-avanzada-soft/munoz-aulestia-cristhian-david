@@ -112,7 +112,10 @@
       <workItem from="1672351799138" duration="6881000" />
       <workItem from="1672411638287" duration="1294000" />
       <workItem from="1672602188532" duration="6927000" />
-      <workItem from="1672749502077" duration="4643000" />
+      <workItem from="1672749502077" duration="5333000" />
+      <workItem from="1672921493901" duration="16000" />
+      <workItem from="1672954237122" duration="4855000" />
+      <workItem from="1672959656147" duration="1213000" />
     </task>
     <servers />
   </component>
@@ -134,17 +137,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/react-nextjs/components/a_estilos/EstilosEjemplo.tsx</url>
-          <line>10</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
