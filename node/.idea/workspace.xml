@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -116,6 +116,9 @@
       <workItem from="1672921493901" duration="16000" />
       <workItem from="1672954237122" duration="4855000" />
       <workItem from="1672959656147" duration="1213000" />
+      <workItem from="1673294868223" duration="6393000" />
+      <workItem from="1673323449963" duration="1779000" />
+      <workItem from="1673352797278" duration="7358000" />
     </task>
     <servers />
   </component>
