@@ -51,7 +51,7 @@ function ejercicio08(path, contenidoNuevo){
 
 }
 
-ejercicio08('06-ejemplo.txt', ':) lo logramos!')
+ejercicio08('../06-ejemplo.txt', ':) lo logramos!')
 
 
 //ASINC & AWAIT
@@ -72,7 +72,7 @@ async function asyncAwaitUno(path, nuevoContenido){
     }
 
 }
-asyncAwaitUno('06-ejemplo.txt', ':) lo logramos!').then().catch()
+asyncAwaitUno('06-ejemplo.txt', ':) lo logramos!').then().catch();
 
 const asyncAwaitDos = async function (){
 

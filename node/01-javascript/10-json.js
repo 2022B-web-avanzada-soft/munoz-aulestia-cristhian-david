@@ -1,16 +1,28 @@
 //Stringly y Parse
 
+const usuario ={
+    id:3,
+    nombre:"Cristhian",
+};
+const usuario1 ={
+    id:3,
+    nombre:"Cristhian",
+};
+const usuario2 ={
+    id:2,
+    nombre:"Cristhian2",
+};
 const arregloUsuarios= [
     {
         id:1,
         nombre:"Cristhian",
-    }
+    },
+    usuario,
+    usuario2,
 ];
+
 const arregloGuardado = JSON.stringify(arregloUsuarios)//Usuarios, Objetos
-const usuario ={
-    id:1,
-    nombre:"Cristhian",
-};
+
 
 const objetoGuardado = JSON.stringify(usuario); // Arreglos,
 console. log( ' arregloGuardado ' , arregloGuardado) ;

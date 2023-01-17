@@ -14,8 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
+        <option value="tsconfig.json" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -38,7 +39,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;19.1.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.11.9&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/criss/GitHub/munoz-aulestia-cristhian-david/node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/criss/GitHub/munoz-aulestia-cristhian-david/node/01-Examen_Primer_Bimestre&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -51,35 +52,38 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-Examen_Primer_Bimestre" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript\proyecto-node" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.01-variables.js">
-    <configuration name="01-variables.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/02-typescript/01-variables.js" working-dir="$PROJECT_DIR$/02-typescript">
-      <method v="2" />
-    </configuration>
-    <configuration name="07-promesas.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-javascript/07-promesas.js" working-dir="$PROJECT_DIR$/01-javascript">
-      <method v="2" />
-    </configuration>
-    <configuration name="08-promesas.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-javascript/08-promesas.js" working-dir="$PROJECT_DIR$/01-javascript">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Node.js.main.js">
     <configuration name="09-inquirer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-javascript/09-inquirer.js" working-dir="$PROJECT_DIR$/01-javascript">
       <method v="2" />
     </configuration>
     <configuration name="10-json.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-javascript/10-json.js" working-dir="$PROJECT_DIR$/01-javascript">
       <method v="2" />
     </configuration>
+    <configuration name="CRUD_file.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-Examen_Primer_Bimestre/CRUD_file.js" working-dir="$PROJECT_DIR$/01-Examen_Primer_Bimestre">
+      <method v="2" />
+    </configuration>
+    <configuration name="CRUD_file.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-Examen_Primer_Bimestre/CRUD_file.ts" working-dir="$PROJECT_DIR$/01-Examen_Primer_Bimestre">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/01-Examen_Primer_Bimestre/main.js" working-dir="$PROJECT_DIR$/01-Examen_Primer_Bimestre">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.01-variables.js" />
+        <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.10-json.js" />
         <item itemvalue="Node.js.09-inquirer.js" />
-        <item itemvalue="Node.js.08-promesas.js" />
-        <item itemvalue="Node.js.07-promesas.js" />
+        <item itemvalue="Node.js.CRUD_file.js" />
+        <item itemvalue="Node.js.CRUD_file.ts" />
       </list>
     </recent_temporary>
   </component>
@@ -119,6 +123,11 @@
       <workItem from="1673294868223" duration="6393000" />
       <workItem from="1673323449963" duration="1779000" />
       <workItem from="1673352797278" duration="7358000" />
+      <workItem from="1673380518800" duration="12308000" />
+      <workItem from="1673585115511" duration="597000" />
+      <workItem from="1673752068474" duration="5605000" />
+      <workItem from="1673878964010" duration="39063000" />
+      <workItem from="1673930746664" duration="8447000" />
     </task>
     <servers />
   </component>
@@ -126,7 +135,11 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
+        <option value="$PROJECT_DIR$/01-Examen_Primer_Bimestre/CRUD_file.js" />
+        <option value="$PROJECT_DIR$/01-Examen_Primer_Bimestre/Entidades/Photographer.js" />
+        <option value="$PROJECT_DIR$/01-Examen_Primer_Bimestre/main.js" />
         <option value="$PROJECT_DIR$/02-typescript/01-variables.js" />
+        <option value="$PROJECT_DIR$/react-nextjs/interfaces/moneda.js" />
       </list>
     </option>
   </component>

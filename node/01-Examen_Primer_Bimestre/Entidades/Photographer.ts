@@ -2,40 +2,53 @@ class Person {
     public name: string;
     public last_name: string;
     public date_birth: Date;
-    private age: number;
-
+    public age: number
+    public id: string;
 
     constructor(
-        nombreParametro: string,
-        apellidoParametro: string,
-    ) {
-        this.name = nombreParametro;
-        this.last_name = apellidoParametro;
+        name_param: string,
+        last_name_param: string,
+        date_birth_param: Date,
+        id_param: string,
+    )   {
+        this.name = name_param;
+        this.last_name = last_name_param;
+        this.date_birth = date_birth_param;
+        this.age = this.getAge_years();
+        this.id = id_param;
+        }
+
+    //Get Age in Number -> Integer
+    //How to do?
+    //Calculate the years getting date_birth
+    private getAge_years (): number{
+        var today = new Date();
+        var age_param = today.getFullYear() - this.date_birth.getFullYear();
+        var months_param = today.getMonth() - this.date_birth.getMonth();
+
+        if (months_param < 0 || (months_param === 0 && today.getDate() < this.date_birth.getDate())) {
+            age_param--;
+        }
+
+        return age_param;
     }
 
 }
-
 
 //----------------------------------------------------------------------
 
-class Photographer extends Person{
+export class Photographer extends Person{
     constructor(
-        nombreParametro:string, //Parametros del cosntructor
-        apellidoParametro: string, //Parametros del constructor
-        public cedula: string, //Modificador acceso-> Propíedad de la clase
-        public estadocivil: string, //Mofificador acceso -> Propiedad de la clase
+        name_param: string,
+        last_name_param: string,
+        date_birth_param: Date,
+        id_param: string,
     ) {
-        super(nombreParametro, apellidoParametro);
-        this.cedula;
-        this.estadocivil;
-    }
-}
-const adrian = new Photographer(
-    'Adrian',
-    'Eguez',
-    '1727425900',
-    'soltero'
-);
+        super(name_param, last_name_param, date_birth_param, id_param);
+        //Atributos propios de un photographer
 
-adrian.cedula; //1727425900
-adrian.estadocivil; // 'soltero'
+    }
+
+
+
+}
