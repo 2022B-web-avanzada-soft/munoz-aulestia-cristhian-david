@@ -15,8 +15,31 @@ function welcome(){
     console.log('\x1b[1m \x1b[31m Welcome to PholapSC \x1b[0m')
 }
 function goodBye(){
+    console.clear()
     console.log('\x1b[1m \x1b[32m Goodbye, see you next time! \x1b[0m')
 }
+function toPause(){
+    const answer = inquirer.prompt(
+        [
+            {
+                type: 'list',
+                name: 'enter',
+                message: 'Press ENTER to continue.',
+                choices: ['Come back 😄', '¡Exit! 😭']
+            }
+        ]
+    ).then((answer)=>{
+            if (answer.enter == 'Come back 😄'){
+                inquirerMenu();
+            }else{
+                //nothing
+                goodBye();
+            }
+
+        }
+    )
+}
+
 
 
 //Preparation of Files
@@ -41,54 +64,49 @@ async function writeFile(){
     }
 }
 
-
 async function inquirerMenu(){
     console.clear();
     welcome();
+    let comprobador:number=0;
+
     //Una vez ejecutado recupero mis datos guardados en mi arreglo
     await readFiles();
 
-    //Declaro algunos objetos antes
-    /*
-    var person1 = new Photographer("David", "Rosero",new Date('01-01-2000'),'01');
-    var person2 = new Photographer("Santiago", "Roman",new Date('01-01-2000'),'02');
-    arrayPhotographers.push(person1,person2);
-
-     */
-
     const answer = await inquirer
         .prompt(
-                    {
-                        type: 'list',
-                        name: 'action1',
-                        message: 'What do you do?',
-                        choices: ['Visualize portfolio', 'Know about Photographers', 'Are you new Photographer?', 'Edit profile', 'Close']
-                    }
-                )
+            {
+                type: 'list',
+                name: 'action1',
+                message: 'What do you do?',
+                choices: ['Visualize portfolio', 'Know about Photographers', 'Are you new Photographer?', 'Edit profile' , 'Delete profile', 'Close']
+            }
+        )
         .then((answer) => {
-                                if (answer.action1 == 'Are you new Photographer?'){
-                                    console.clear();
-                                    createPhotographer();
+            console.clear();
+            if (answer.action1 == 'Are you new Photographer?'){
+                createPhotographer();
 
+            } else if(answer.action1 == 'Know about Photographers'){
+                showPhotographers();
+                setTimeout(()=>{},3000);
+                console.clear();
 
-                                } else if(answer.action1 == 'Know about Photographers'){
-                                    console.clear();
-                                    showPhotographers();
+            } else if(answer.action1 == 'Visualize portfolio'){
 
-                                } else if(answer.action1 == 'Visualize portfolio'){
-                                    console.clear();
+            } else if(answer.action1 == 'Edit profile'){
+                searchPhotographerbyID('edit');
 
-                                    inquirerMenu();
-                                } else if(answer.action1 == 'Edit profile'){
-                                    console.clear();
-                                    editProfilePhotographer();
+            }else if(answer.action1 == 'Delete profile'){
+                searchPhotographerbyID('delete');
 
-                                }else if(answer.action1 == 'Close'){
-                                    console.clear();
-                                    goodBye();
-                                    //nothing
-                                }
-                            });
+            }else if(answer.action1 == 'Close'){
+                comprobador=-1;
+                goodBye();
+
+            }
+        });
+    setTimeout(()=>{},3000);
+
 }
 
 
@@ -137,7 +155,7 @@ async function createPhotographer(){
         console.error(e);
     }
     setTimeout(()=>{},3000);
-    await inquirerMenu();
+    await toPause();
 }
 
 
@@ -145,13 +163,14 @@ async function showPhotographers(){
     try{
         await readFiles();
         console.log(arrayPhotographers);
+        //setTimeout(()=>{},5000);
     } catch (e){
         console.error(e);
     }
-
+    setTimeout(()=>{},5000);
 }
 
-async function editProfilePhotographer(){
+async function searchPhotographerbyID(action:String){
     try{
         const find_param = await inquirer
             .prompt(
@@ -161,42 +180,46 @@ async function editProfilePhotographer(){
                     message: 'Write your ID: '
                 }
             );
-        //await readFiles();
+        await readFiles();
+        let index_found:number = arrayPhotographers.findIndex(the_most_search => the_most_search.id == find_param.id_search);
+        //console.log(index_found);
 
-        let index_found = arrayPhotographers.findIndex(the_most_search => the_most_search.id == find_param.id_search);
-        console.log(index_found);
-
-        const hol = await editPhotographer(index_found);
-
-
+        if (index_found >=0 ){
+                                if(action=='edit'){
+                                    await editPhotographer(index_found);
+                                } else if(action=='delete'){
+                                    await deletePhotographer(index_found);
+                                }
+        }else{
+            console.log('Photographer does not Found')
+        }
     } catch (e){
         console.error(e);
     }
-    //await inquirerMenu();
+
 }
 
-async function editPhotographer(index_found){
+async function editPhotographer(index_found:number){
     try{
-
         const update_Info = await inquirer
-            .prompt(
+            .prompt([
                 {
                     type: 'input',
                     name: 'name',
                     message: 'Name:',
-                    default: arrayPhotographers[index_found].name.toString(),
+                    default: arrayPhotographers[index_found].name,
                 },
                 {
                     type: 'input',
                     name: 'last_name',
                     message: 'Last Name:',
-                    dafault: arrayPhotographers[index_found].last_name.toString(),
+                    default: arrayPhotographers[index_found].last_name,
                 },
                 {
                     type: 'input',
                     name: 'date_birth',
                     message: 'Date Birth',
-                    default: arrayPhotographers[index_found].date_birth.toString(),
+                    default: '01-01-2000',
                 },
                 {
                     type: 'input',
@@ -204,23 +227,32 @@ async function editPhotographer(index_found){
                     message: 'Which is your ID?',
                     default: arrayPhotographers[index_found].id.toString(),
                 }
-            );
+            ]);
 
         arrayPhotographers[index_found].name = update_Info.name;
         arrayPhotographers[index_found].last_name = update_Info.last_name;
         arrayPhotographers[index_found].date_birth = new Date(update_Info.date_birth);
         arrayPhotographers[index_found].id = update_Info.id;
-
-        if (index_found >= 0){
-            //console.clear();
-
-        }else{
-            console.log("No existe algún registro similar");
-        }
+        await writeFile();
     } catch (e){
         console.error(e);
     }
+    setTimeout(()=>{},3000);
+}
+async function deletePhotographer(id:number){
+    try{
+        await readFiles();
+        //Use .splice to identify the value to delete into array
+        //and indicate only an element of array with '1'
+        arrayPhotographers.splice(id,1);
+        await writeFile();
+        //setTimeout(()=>{},2000);
+
+    } catch (e){
+        console.error(e);
+    }
+    setTimeout(()=>{},3000);
 }
 
-inquirerMenu();
 
+inquirerMenu();

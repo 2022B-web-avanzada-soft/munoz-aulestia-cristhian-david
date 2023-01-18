@@ -47,7 +47,26 @@ function welcome() {
     console.log('\x1b[1m \x1b[31m Welcome to PholapSC \x1b[0m');
 }
 function goodBye() {
+    console.clear();
     console.log('\x1b[1m \x1b[32m Goodbye, see you next time! \x1b[0m');
+}
+function toPause() {
+    var answer = inquirer.prompt([
+        {
+            type: 'list',
+            name: 'enter',
+            message: 'Press ENTER to continue.',
+            choices: ['Come back 😄', '¡Exit! 😭']
+        }
+    ]).then(function (answer) {
+        if (answer.enter == 'Come back 😄') {
+            inquirerMenu();
+        }
+        else {
+            //nothing
+            goodBye();
+        }
+    });
 }
 //Preparation of Files
 function readFiles() {
@@ -90,12 +109,13 @@ function writeFile() {
 }
 function inquirerMenu() {
     return __awaiter(this, void 0, void 0, function () {
-        var answer;
+        var comprobador, answer;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     console.clear();
                     welcome();
+                    comprobador = 0;
                     //Una vez ejecutado recupero mis datos guardados en mi arreglo
                     return [4 /*yield*/, readFiles()];
                 case 1:
@@ -106,33 +126,34 @@ function inquirerMenu() {
                             type: 'list',
                             name: 'action1',
                             message: 'What do you do?',
-                            choices: ['Visualize portfolio', 'Know about Photographers', 'Are you new Photographer?', 'Edit profile', 'Close']
+                            choices: ['Visualize portfolio', 'Know about Photographers', 'Are you new Photographer?', 'Edit profile', 'Delete profile', 'Close']
                         })
                             .then(function (answer) {
+                            console.clear();
                             if (answer.action1 == 'Are you new Photographer?') {
-                                console.clear();
                                 createPhotographer();
                             }
                             else if (answer.action1 == 'Know about Photographers') {
-                                console.clear();
                                 showPhotographers();
+                                setTimeout(function () { }, 3000);
+                                console.clear();
                             }
                             else if (answer.action1 == 'Visualize portfolio') {
-                                console.clear();
-                                inquirerMenu();
                             }
                             else if (answer.action1 == 'Edit profile') {
-                                console.clear();
-                                editProfilePhotographer();
+                                searchPhotographerbyID('edit');
+                            }
+                            else if (answer.action1 == 'Delete profile') {
+                                searchPhotographerbyID('delete');
                             }
                             else if (answer.action1 == 'Close') {
-                                console.clear();
+                                comprobador = -1;
                                 goodBye();
-                                //nothing
                             }
                         })];
                 case 2:
                     answer = _a.sent();
+                    setTimeout(function () { }, 3000);
                     return [2 /*return*/];
             }
         });
@@ -182,7 +203,7 @@ function createPhotographer() {
                     return [3 /*break*/, 3];
                 case 3:
                     setTimeout(function () { }, 3000);
-                    return [4 /*yield*/, inquirerMenu()];
+                    return [4 /*yield*/, toPause()];
                 case 4:
                     _a.sent();
                     return [2 /*return*/];
@@ -206,18 +227,20 @@ function showPhotographers() {
                     e_2 = _a.sent();
                     console.error(e_2);
                     return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
+                case 3:
+                    setTimeout(function () { }, 5000);
+                    return [2 /*return*/];
             }
         });
     });
 }
-function editProfilePhotographer() {
+function searchPhotographerbyID(action) {
     return __awaiter(this, void 0, void 0, function () {
-        var find_param_1, index_found, hol, e_3;
+        var find_param_1, index_found, e_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 3, , 4]);
+                    _a.trys.push([0, 9, , 10]);
                     return [4 /*yield*/, inquirer
                             .prompt({
                             type: 'input',
@@ -226,17 +249,32 @@ function editProfilePhotographer() {
                         })];
                 case 1:
                     find_param_1 = _a.sent();
-                    index_found = arrayPhotographers.findIndex(function (the_most_search) { return the_most_search.id == find_param_1.id_search; });
-                    console.log(arrayPhotographers[index_found].name.toString());
-                    return [4 /*yield*/, editPhotographer(index_found)];
+                    return [4 /*yield*/, readFiles()];
                 case 2:
-                    hol = _a.sent();
-                    return [3 /*break*/, 4];
+                    _a.sent();
+                    index_found = arrayPhotographers.findIndex(function (the_most_search) { return the_most_search.id == find_param_1.id_search; });
+                    if (!(index_found >= 0)) return [3 /*break*/, 7];
+                    if (!(action == 'edit')) return [3 /*break*/, 4];
+                    return [4 /*yield*/, editPhotographer(index_found)];
                 case 3:
+                    _a.sent();
+                    return [3 /*break*/, 6];
+                case 4:
+                    if (!(action == 'delete')) return [3 /*break*/, 6];
+                    return [4 /*yield*/, deletePhotographer(index_found)];
+                case 5:
+                    _a.sent();
+                    _a.label = 6;
+                case 6: return [3 /*break*/, 8];
+                case 7:
+                    console.log('Photographer does not Found');
+                    _a.label = 8;
+                case 8: return [3 /*break*/, 10];
+                case 9:
                     e_3 = _a.sent();
                     console.error(e_3);
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/];
+                    return [3 /*break*/, 10];
+                case 10: return [2 /*return*/];
             }
         });
     });
@@ -247,47 +285,79 @@ function editPhotographer(index_found) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 2, , 3]);
+                    _a.trys.push([0, 3, , 4]);
                     return [4 /*yield*/, inquirer
-                            .prompt({
-                            type: 'input',
-                            name: 'name',
-                            message: 'Name:',
-                            "default": arrayPhotographers[index_found].name.toString()
-                        }, {
-                            type: 'input',
-                            name: 'last_name',
-                            message: 'Last Name:',
-                            dafault: arrayPhotographers[index_found].last_name.toString()
-                        }, {
-                            type: 'input',
-                            name: 'date_birth',
-                            message: 'Date Birth',
-                            "default": arrayPhotographers[index_found].date_birth.toString()
-                        }, {
-                            type: 'input',
-                            name: 'id',
-                            message: 'Which is your ID?',
-                            "default": arrayPhotographers[index_found].id.toString()
-                        })];
+                            .prompt([
+                            {
+                                type: 'input',
+                                name: 'name',
+                                message: 'Name:',
+                                "default": arrayPhotographers[index_found].name
+                            },
+                            {
+                                type: 'input',
+                                name: 'last_name',
+                                message: 'Last Name:',
+                                "default": arrayPhotographers[index_found].last_name
+                            },
+                            {
+                                type: 'input',
+                                name: 'date_birth',
+                                message: 'Date Birth',
+                                "default": '01-01-2000'
+                            },
+                            {
+                                type: 'input',
+                                name: 'id',
+                                message: 'Which is your ID?',
+                                "default": arrayPhotographers[index_found].id.toString()
+                            }
+                        ])];
                 case 1:
                     update_Info = _a.sent();
                     arrayPhotographers[index_found].name = update_Info.name;
                     arrayPhotographers[index_found].last_name = update_Info.last_name;
                     arrayPhotographers[index_found].date_birth = new Date(update_Info.date_birth);
                     arrayPhotographers[index_found].id = update_Info.id;
-                    if (index_found >= 0) {
-                        //console.clear();
-                    }
-                    else {
-                        console.log("No existe algún registro similar");
-                    }
-                    return [3 /*break*/, 3];
+                    return [4 /*yield*/, writeFile()];
                 case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
                     e_4 = _a.sent();
                     console.error(e_4);
-                    return [3 /*break*/, 3];
-                case 3: return [2 /*return*/];
+                    return [3 /*break*/, 4];
+                case 4:
+                    setTimeout(function () { }, 3000);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function deletePhotographer(id) {
+    return __awaiter(this, void 0, void 0, function () {
+        var e_5;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, readFiles()];
+                case 1:
+                    _a.sent();
+                    //Use .splice to identify the value to delete into array
+                    //and indicate only an element of array with '1'
+                    arrayPhotographers.splice(id, 1);
+                    return [4 /*yield*/, writeFile()];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    e_5 = _a.sent();
+                    console.error(e_5);
+                    return [3 /*break*/, 4];
+                case 4:
+                    setTimeout(function () { }, 3000);
+                    return [2 /*return*/];
             }
         });
     });
