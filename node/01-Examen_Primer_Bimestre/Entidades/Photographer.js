@@ -16,6 +16,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 exports.__esModule = true;
 exports.Photographer = void 0;
+var Portfolio_1 = require("./Portfolio");
 var Person = /** @class */ (function () {
     function Person(name_param, last_name_param, date_birth_param, id_param) {
         this.name = name_param;
@@ -42,9 +43,20 @@ var Person = /** @class */ (function () {
 var Photographer = /** @class */ (function (_super) {
     __extends(Photographer, _super);
     function Photographer(name_param, last_name_param, date_birth_param, id_param) {
-        return _super.call(this, name_param, last_name_param, date_birth_param, id_param) || this;
+        var _this = _super.call(this, name_param, last_name_param, date_birth_param, id_param) || this;
         //Atributos propios de un photographer
+        _this._portfolio = [];
+        return _this;
     }
+    Photographer.prototype.portfolio = function () {
+        return this._portfolio;
+    };
+    Photographer.prototype.Setportfolio = function (value) {
+        this._portfolio = value;
+    };
+    Photographer.prototype.newPortfolio = function (category) {
+        this._portfolio.unshift(new Portfolio_1.Porfolio(category));
+    };
     return Photographer;
 }(Person));
 exports.Photographer = Photographer;

@@ -41,6 +41,7 @@ var inquirer = require('inquirer');
 var path_photographers = "./Sources/photographers.txt";
 var arrayPhotographers = [];
 var CRUD_file_js_1 = require("./CRUD_file.js");
+var Portfolio_1 = require("./Entidades/Portfolio");
 //tsc main.ts --target es6
 //Functions
 function welcome() {
@@ -90,7 +91,19 @@ function readFiles() {
     });
 }
 function getPhotographers(item) {
-    return new Photographer_1.Photographer(item.name, item.last_name, new Date(item.date_birth), item.id);
+    var photographer = new Photographer_1.Photographer(item.name, item.last_name, new Date(item.date_birth), item.id);
+    var portfolios = item._portfolio.map(getPortfolios);
+    photographer.Setportfolio(portfolios);
+    return photographer;
+}
+function getPortfolios(item) {
+    var portfolio = new Portfolio_1.Porfolio(item.category);
+    var arrayImages = item.images.map(getImagesbyPortfolio);
+    portfolio.setArray_Images(arrayImages);
+    return portfolio;
+}
+function getImagesbyPortfolio(item) {
+    return item;
 }
 function writeFile() {
     return __awaiter(this, void 0, void 0, function () {
@@ -139,6 +152,7 @@ function inquirerMenu() {
                                 console.clear();
                             }
                             else if (answer.action1 == 'Visualize portfolio') {
+                                searchPhotographerbyID('Visualize portfolio');
                             }
                             else if (answer.action1 == 'Edit profile') {
                                 searchPhotographerbyID('edit');
@@ -165,7 +179,7 @@ function createPhotographer() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 2, , 3]);
+                    _a.trys.push([0, 4, , 5]);
                     return [4 /*yield*/, inquirer
                             .prompt([
                             {
@@ -189,6 +203,12 @@ function createPhotographer() {
                                 name: 'id',
                                 message: 'Which is your ID?',
                                 "default": '17000000**'
+                            },
+                            {
+                                type: 'confirm',
+                                name: 'confirm_Portfolio',
+                                message: 'Wish you have a new Portfolio?',
+                                "default": true
                             }
                         ])];
                 case 1:
@@ -196,17 +216,17 @@ function createPhotographer() {
                     newPerson = new Photographer_1.Photographer(respuesta.name, respuesta.last_name, new Date(respuesta.date_birth), respuesta.id);
                     arrayPhotographers.unshift(newPerson);
                     writeFile();
-                    return [3 /*break*/, 3];
+                    if (!respuesta.confirm_Portfolio) return [3 /*break*/, 3];
+                    return [4 /*yield*/, setImages(0)];
                 case 2:
+                    _a.sent();
+                    _a.label = 3;
+                case 3: return [3 /*break*/, 5];
+                case 4:
                     e_1 = _a.sent();
                     console.error(e_1);
-                    return [3 /*break*/, 3];
-                case 3:
-                    setTimeout(function () { }, 3000);
-                    return [4 /*yield*/, toPause()];
-                case 4:
-                    _a.sent();
-                    return [2 /*return*/];
+                    return [3 /*break*/, 5];
+                case 5: return [2 /*return*/];
             }
         });
     });
@@ -222,6 +242,7 @@ function showPhotographers() {
                 case 1:
                     _a.sent();
                     console.log(arrayPhotographers);
+                    console.log(arrayPhotographers[0].portfolio());
                     return [3 /*break*/, 3];
                 case 2:
                     e_2 = _a.sent();
@@ -234,13 +255,36 @@ function showPhotographers() {
         });
     });
 }
-function searchPhotographerbyID(action) {
+function visualizePortfolio(indexFound) {
     return __awaiter(this, void 0, void 0, function () {
-        var find_param_1, index_found, e_3;
+        var e_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 9, , 10]);
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, readFiles()];
+                case 1:
+                    _a.sent();
+                    console.log(arrayPhotographers[indexFound].portfolio());
+                    return [3 /*break*/, 3];
+                case 2:
+                    e_3 = _a.sent();
+                    console.error(e_3);
+                    return [3 /*break*/, 3];
+                case 3:
+                    setTimeout(function () { }, 5000);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function searchPhotographerbyID(action) {
+    return __awaiter(this, void 0, void 0, function () {
+        var find_param_1, index_found, e_4;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 11, , 12]);
                     return [4 /*yield*/, inquirer
                             .prompt({
                             type: 'input',
@@ -253,39 +297,45 @@ function searchPhotographerbyID(action) {
                 case 2:
                     _a.sent();
                     index_found = arrayPhotographers.findIndex(function (the_most_search) { return the_most_search.id == find_param_1.id_search; });
-                    if (!(index_found >= 0)) return [3 /*break*/, 7];
+                    if (!(index_found >= 0)) return [3 /*break*/, 9];
                     if (!(action == 'edit')) return [3 /*break*/, 4];
                     return [4 /*yield*/, editPhotographer(index_found)];
                 case 3:
                     _a.sent();
-                    return [3 /*break*/, 6];
+                    return [3 /*break*/, 8];
                 case 4:
                     if (!(action == 'delete')) return [3 /*break*/, 6];
                     return [4 /*yield*/, deletePhotographer(index_found)];
                 case 5:
                     _a.sent();
-                    _a.label = 6;
-                case 6: return [3 /*break*/, 8];
+                    return [3 /*break*/, 8];
+                case 6:
+                    if (!(action == 'Visualize portfolio')) return [3 /*break*/, 8];
+                    return [4 /*yield*/, visualizePortfolio(index_found)];
                 case 7:
-                    console.log('Photographer does not Found');
+                    _a.sent();
                     _a.label = 8;
                 case 8: return [3 /*break*/, 10];
                 case 9:
-                    e_3 = _a.sent();
-                    console.error(e_3);
-                    return [3 /*break*/, 10];
-                case 10: return [2 /*return*/];
+                    console.log('Photographer does not Found');
+                    _a.label = 10;
+                case 10: return [3 /*break*/, 12];
+                case 11:
+                    e_4 = _a.sent();
+                    console.error(e_4);
+                    return [3 /*break*/, 12];
+                case 12: return [2 /*return*/];
             }
         });
     });
 }
 function editPhotographer(index_found) {
     return __awaiter(this, void 0, void 0, function () {
-        var update_Info, e_4;
+        var update_Info, e_5;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 3, , 4]);
+                    _a.trys.push([0, 5, , 6]);
                     return [4 /*yield*/, inquirer
                             .prompt([
                             {
@@ -311,6 +361,12 @@ function editPhotographer(index_found) {
                                 name: 'id',
                                 message: 'Which is your ID?',
                                 "default": arrayPhotographers[index_found].id.toString()
+                            },
+                            {
+                                type: 'confirm',
+                                name: 'confirm_Portfolio',
+                                message: 'Wish you have a new Portfolio?',
+                                "default": true
                             }
                         ])];
                 case 1:
@@ -319,16 +375,24 @@ function editPhotographer(index_found) {
                     arrayPhotographers[index_found].last_name = update_Info.last_name;
                     arrayPhotographers[index_found].date_birth = new Date(update_Info.date_birth);
                     arrayPhotographers[index_found].id = update_Info.id;
-                    return [4 /*yield*/, writeFile()];
+                    if (!update_Info.confirm_Portfolio) return [3 /*break*/, 3];
+                    return [4 /*yield*/, setImages(index_found)];
                 case 2:
                     _a.sent();
-                    return [3 /*break*/, 4];
-                case 3:
-                    e_4 = _a.sent();
-                    console.error(e_4);
-                    return [3 /*break*/, 4];
+                    _a.label = 3;
+                case 3: return [4 /*yield*/, writeFile()];
                 case 4:
+                    _a.sent();
+                    return [3 /*break*/, 6];
+                case 5:
+                    e_5 = _a.sent();
+                    console.error(e_5);
+                    return [3 /*break*/, 6];
+                case 6:
                     setTimeout(function () { }, 3000);
+                    return [4 /*yield*/, toPause()];
+                case 7:
+                    _a.sent();
                     return [2 /*return*/];
             }
         });
@@ -336,7 +400,7 @@ function editPhotographer(index_found) {
 }
 function deletePhotographer(id) {
     return __awaiter(this, void 0, void 0, function () {
-        var e_5;
+        var e_6;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -352,12 +416,72 @@ function deletePhotographer(id) {
                     _a.sent();
                     return [3 /*break*/, 4];
                 case 3:
-                    e_5 = _a.sent();
-                    console.error(e_5);
+                    e_6 = _a.sent();
+                    console.error(e_6);
                     return [3 /*break*/, 4];
                 case 4:
                     setTimeout(function () { }, 3000);
+                    return [4 /*yield*/, toPause()];
+                case 5:
+                    _a.sent();
                     return [2 /*return*/];
+            }
+        });
+    });
+}
+function setImages(index_photographer) {
+    return __awaiter(this, void 0, void 0, function () {
+        var setImages_1, e_7;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 3, , 4]);
+                    console.clear();
+                    return [4 /*yield*/, inquirer
+                            .prompt([
+                            {
+                                type: 'input',
+                                name: 'category',
+                                message: 'Name of category: '
+                            }, {
+                                type: 'input',
+                                name: 'image1',
+                                message: 'Image 1: '
+                            }, {
+                                type: 'input',
+                                name: 'image2',
+                                message: 'Image 2: '
+                            }, {
+                                type: 'input',
+                                name: 'image3',
+                                message: 'Image 3: '
+                            }, {
+                                type: 'input',
+                                name: 'image4',
+                                message: 'Image 4: '
+                            }, {
+                                type: 'input',
+                                name: 'image5',
+                                message: 'Image 5: '
+                            }
+                        ])];
+                case 1:
+                    setImages_1 = _a.sent();
+                    arrayPhotographers[index_photographer].newPortfolio(setImages_1.category);
+                    arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages_1.image1);
+                    arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages_1.image2);
+                    arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages_1.image3);
+                    arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages_1.image4);
+                    arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages_1.image5);
+                    return [4 /*yield*/, writeFile()];
+                case 2:
+                    _a.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    e_7 = _a.sent();
+                    console.error(e_7);
+                    return [3 /*break*/, 4];
+                case 4: return [2 /*return*/];
             }
         });
     });

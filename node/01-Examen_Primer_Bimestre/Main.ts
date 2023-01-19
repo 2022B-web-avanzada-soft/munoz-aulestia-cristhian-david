@@ -1,16 +1,14 @@
 import {Photographer} from "./Entidades/Photographer";
+import {Porfolio} from "./Entidades/Portfolio";
+import {escribirArchivos, leerArchivos} from "./CRUD_file.js";
 
 const inquirer = require ('inquirer');
 const path_photographers = "./Sources/photographers.txt";
 let arrayPhotographers: Array<Photographer> = [];
 
-import {escribirArchivos, leerArchivos} from "./CRUD_file.js";
-import {read} from "fs";
+//tsc main.ts
 
-//tsc main.ts --target es6
-
-
-//Functions
+//--------------------------------Functions---------------------------------------
 function welcome(){
     console.log('\x1b[1m \x1b[31m Welcome to PholapSC \x1b[0m')
 }
@@ -39,9 +37,7 @@ function toPause(){
         }
     )
 }
-
-
-
+//---------------------------------READ FILE--------------------------------------------
 //Preparation of Files
 async function readFiles(){
     const contenido = await leerArchivos(path_photographers);
@@ -53,10 +49,24 @@ async function readFiles(){
     }
 
 }
+//Destructores del contenido guardado
 function getPhotographers(item) {
-    return new Photographer(item.name,item.last_name,new Date(item.date_birth),item.id);
+    let photographer = new Photographer(item.name,item.last_name,new Date(item.date_birth),item.id);
+    const portfolios: Array<Porfolio> = item._portfolio.map(getPortfolios);
+    photographer.Setportfolio(portfolios);
+    return photographer;
+}
+function getPortfolios(item) {
+    let portfolio = new Porfolio(item.category);
+    const arrayImages:Array<String> = item.images.map(getImagesbyPortfolio);
+    portfolio.setArray_Images(arrayImages);
+    return portfolio
+}
+function getImagesbyPortfolio(item) {
+    return item;
 }
 
+//---------------------------------WRITE FILE--------------------------------------------
 async function writeFile(){
     //Write all my data
     if (arrayPhotographers.length != 0){
@@ -64,6 +74,9 @@ async function writeFile(){
     }
 }
 
+
+
+//------------------------------------MENU-----------------------------------------------
 async function inquirerMenu(){
     console.clear();
     welcome();
@@ -92,6 +105,7 @@ async function inquirerMenu(){
                 console.clear();
 
             } else if(answer.action1 == 'Visualize portfolio'){
+                searchPhotographerbyID('Visualize portfolio')
 
             } else if(answer.action1 == 'Edit profile'){
                 searchPhotographerbyID('edit');
@@ -109,7 +123,7 @@ async function inquirerMenu(){
 
 }
 
-
+//--------------------FUNCTIONS CRUD-----ALTO NIVEL-----------------------
 async function createPhotographer(){
     try{
         const respuesta = await inquirer
@@ -135,64 +149,25 @@ async function createPhotographer(){
                     name: 'id',
                     message: 'Which is your ID?',
                     default: '17000000**'
+                },
+                {
+                    type: 'confirm',
+                    name: 'confirm_Portfolio',
+                    message: 'Wish you have a new Portfolio?',
+                    default: true
                 }
 
             ]);
-        //console.log(respuesta);
 
         //Create new Photographer
         var newPerson = new Photographer(respuesta.name,respuesta.last_name,new Date(respuesta.date_birth),respuesta.id);
         arrayPhotographers.unshift(newPerson);
         writeFile();
 
-        //Se puede escribir 1 objeto pero hace falta tomar en cuenta al arreglo
-        //await writeFiles(newPerson);
-
-        //Vuelvo a invocar inquirerMenu()
-        //await inquirerMenu();
-
-    } catch (e){
-        console.error(e);
-    }
-    setTimeout(()=>{},3000);
-    await toPause();
-}
-
-
-async function showPhotographers(){
-    try{
-        await readFiles();
-        console.log(arrayPhotographers);
-        //setTimeout(()=>{},5000);
-    } catch (e){
-        console.error(e);
-    }
-    setTimeout(()=>{},5000);
-}
-
-async function searchPhotographerbyID(action:String){
-    try{
-        const find_param = await inquirer
-            .prompt(
-                {
-                    type: 'input',
-                    name: 'id_search',
-                    message: 'Write your ID: '
-                }
-            );
-        await readFiles();
-        let index_found:number = arrayPhotographers.findIndex(the_most_search => the_most_search.id == find_param.id_search);
-        //console.log(index_found);
-
-        if (index_found >=0 ){
-                                if(action=='edit'){
-                                    await editPhotographer(index_found);
-                                } else if(action=='delete'){
-                                    await deletePhotographer(index_found);
-                                }
-        }else{
-            console.log('Photographer does not Found')
+        if(respuesta.confirm_Portfolio){
+            await setImages(0);
         }
+
     } catch (e){
         console.error(e);
     }
@@ -226,6 +201,12 @@ async function editPhotographer(index_found:number){
                     name: 'id',
                     message: 'Which is your ID?',
                     default: arrayPhotographers[index_found].id.toString(),
+                },
+                {
+                    type: 'confirm',
+                    name: 'confirm_Portfolio',
+                    message: 'Wish you have a new Portfolio?',
+                    default: true
                 }
             ]);
 
@@ -233,11 +214,17 @@ async function editPhotographer(index_found:number){
         arrayPhotographers[index_found].last_name = update_Info.last_name;
         arrayPhotographers[index_found].date_birth = new Date(update_Info.date_birth);
         arrayPhotographers[index_found].id = update_Info.id;
+
+        if(update_Info.confirm_Portfolio){
+            await setImages(index_found);
+        }
+
         await writeFile();
     } catch (e){
         console.error(e);
     }
     setTimeout(()=>{},3000);
+    await toPause();
 }
 async function deletePhotographer(id:number){
     try{
@@ -252,6 +239,109 @@ async function deletePhotographer(id:number){
         console.error(e);
     }
     setTimeout(()=>{},3000);
+    await toPause();
+}
+
+async function showPhotographers(){
+    try{
+        await readFiles();
+        console.log(arrayPhotographers);
+    } catch (e){
+        console.error(e);
+    }
+    setTimeout(()=>{},5000);
+}
+
+async function showPortfolio(indexFound:number){
+    try{
+        await readFiles();
+        console.log(arrayPhotographers[indexFound].portfolio());
+        //setTimeout(()=>{},5000);
+    } catch (e){
+        console.error(e);
+    }
+    setTimeout(()=>{},5000);
+}
+
+async function searchPhotographerbyID(action:String){
+    try{
+        const find_param = await inquirer
+            .prompt(
+                {
+                    type: 'input',
+                    name: 'id_search',
+                    message: 'Write your ID: '
+                }
+            );
+        await readFiles();
+        let index_found:number = arrayPhotographers.findIndex(the_most_search => the_most_search.id == find_param.id_search);
+        //console.log(index_found);
+
+        if (index_found >=0 ){
+                                if(action=='edit'){
+                                    await editPhotographer(index_found);
+                                } else if(action=='delete'){
+                                    await deletePhotographer(index_found);
+                                } else if(action=='Visualize portfolio'){
+                                    await showPortfolio(index_found);
+                                }
+        }else{
+            console.log('Photographer does not Found')
+        }
+    } catch (e){
+        console.error(e);
+    }
+
+}
+
+async function setImages(index_photographer:number){
+    try {
+        console.clear();
+        const setImages = await inquirer
+            .prompt(
+                [
+                    {
+                        type: 'input',
+                        name: 'category',
+                        message: 'Name of category: '
+                    },{
+                        type: 'input',
+                        name: 'image1',
+                        message: 'Image 1: '
+                    },{
+                        type: 'input',
+                        name: 'image2',
+                        message: 'Image 2: '
+                    },{
+                        type: 'input',
+                        name: 'image3',
+                        message: 'Image 3: '
+                    },{
+                        type: 'input',
+                        name: 'image4',
+                        message: 'Image 4: '
+                    },{
+                        type: 'input',
+                        name: 'image5',
+                        message: 'Image 5: '
+                    }
+                ]
+            );
+        arrayPhotographers[index_photographer].newPortfolio(setImages.category);
+
+        arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages.image1);
+        arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages.image2);
+        arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages.image3);
+        arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages.image4);
+        arrayPhotographers[index_photographer]._portfolio[0].array_newImage(setImages.image5);
+
+        await writeFile();
+
+
+    }catch (e) {
+        console.error(e);
+    }
+
 }
 
 

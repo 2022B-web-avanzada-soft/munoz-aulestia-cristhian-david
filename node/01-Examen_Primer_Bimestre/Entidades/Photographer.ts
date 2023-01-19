@@ -1,8 +1,10 @@
+import {Porfolio} from "./Portfolio";
+
 class Person {
     public name: string;
     public last_name: string;
     public date_birth: Date;
-    public age: number
+    public age: number;
     public id: string;
 
     constructor(
@@ -38,6 +40,9 @@ class Person {
 //----------------------------------------------------------------------
 
 export class Photographer extends Person{
+
+    public _portfolio: Array<Porfolio>;
+
     constructor(
         name_param: string,
         last_name_param: string,
@@ -46,9 +51,22 @@ export class Photographer extends Person{
     ) {
         super(name_param, last_name_param, date_birth_param, id_param);
         //Atributos propios de un photographer
-
+        this._portfolio=[];
     }
 
+
+    public portfolio(): Array<Porfolio> {
+        return this._portfolio;
+    }
+
+
+    public Setportfolio(value: Array<Porfolio>) {
+        this._portfolio = value;
+    }
+
+    public newPortfolio(category: string) {
+        this._portfolio.unshift(new Porfolio(category));
+    }
 
 
 }

@@ -56,6 +56,8 @@
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-Examen_Primer_Bimestre" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\0-Proyecto\Model DB" />
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\0-Proyecto\Sources" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript\proyecto-node" />
@@ -129,7 +131,7 @@
       <workItem from="1673878964010" duration="39063000" />
       <workItem from="1673930746664" duration="8447000" />
       <workItem from="1673957854726" duration="6386000" />
-      <workItem from="1674051412444" duration="14513000" />
+      <workItem from="1674051412444" duration="31398000" />
     </task>
     <servers />
   </component>
@@ -142,6 +144,7 @@
         <option value="$PROJECT_DIR$/01-Examen_Primer_Bimestre/main.js" />
         <option value="$PROJECT_DIR$/02-typescript/01-variables.js" />
         <option value="$PROJECT_DIR$/react-nextjs/interfaces/moneda.js" />
+        <option value="$PROJECT_DIR$/01-Examen_Primer_Bimestre/Entidades/Portfolio.js" />
       </list>
     </option>
   </component>
