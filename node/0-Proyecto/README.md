@@ -17,5 +17,12 @@ Some items to consider into proyect:
 <a name="mockUps"></a>
 ### 2. MockUps
 
+https://memphis-cs.github.io/comp-4081-2018-fall/project/user_stories_template.html
 <a name="userStories"></a>
 ### 3. User Stories
+
+-[x] Como **cliente**, quiero visualizar el portafolio del fotógrafo para decidir si agendo una sesión.
+  - **Criterios de Aceptación:**
+    - Como
+- [ ] Como **cliente**, quiero elegir un paquete para agendar una sesión destinada a mi boda.
+-[ ] Como **fotógrafo**, quiero 
