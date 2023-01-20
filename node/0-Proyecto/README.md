@@ -12,7 +12,7 @@ Some items to consider into proyect:
 
 <a name="database"></a>
 ### 1. Database Diagram
-![](Model DB/db.png)
+![](./Model DB/db.png)
 
 <a name="mockUps"></a>
 ### 2. MockUps
