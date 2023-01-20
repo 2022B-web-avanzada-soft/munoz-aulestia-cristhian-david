@@ -11,15 +11,15 @@ Some items to consider into proyect:
 
 
 <a name="database"></a>
-### 1. Database Diagram
+## 1. Database Diagram
 <img src="Model%20DB/db.png">
 
 <a name="mockUps"></a>
-### 2. MockUps
-
+## 2. MockUps
+https://www.figma.com/file/txF0YF23AI965JTrBeL7tR/PholapSC?node-id=0%3A1&t=kajGcE6tVLdygX76-1
 
 <a name="userStories"></a>
-### 3. User Stories
+## 3. User Stories
 >1 (Small), 2 (Medium), 3 (Large), 5 (Extra), 7 (Extra Large)
 
 ### Client
