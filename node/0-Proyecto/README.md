@@ -1,6 +1,6 @@
 # Proyect of First Bimester
 ## General Info
-Some items to consider into proyect:
+The present proyect indicate the first complements to create the app web of PholapSC. Some items to consider into proyect:
 
 ## Table of Contents
 1. [DataBase Diagram (DB)](#dataBase) => MySql Workbench
@@ -22,15 +22,15 @@ https://www.figma.com/file/txF0YF23AI965JTrBeL7tR/PholapSC?node-id=0%3A1&t=kajGc
 >1 (Small), 2 (Medium), 3 (Large), 5 (Extra), 7 (Extra Large)
 
 ### Client
-- [x] Como **cliente**, quiero visualizar el portafolio del fotógrafo para decidir si agendo una sesión.\
+- [ ] Como **cliente**, quiero visualizar el portafolio del fotógrafo para decidir si agendo una sesión con dicho fotógrafo.\
   **Esfuerzo:** 3\
   **Criterios de Aceptación:**
   - ***Dado*** que el cliente se encuentra en la página principal \
-    ***Cuando*** selecciona en el menú la opción 'Portfolio'\
+    ***Cuando*** selecciona en el menú la opción 'Portafolio'\
     ***Entonces*** se le desplegará la pestaña con los distintos Portafolios que tenga el Photógrafo.
-  - ***Dado*** que el cliente se encuentra en la pestaña de 'Portfolio'\
-    ***Cuando*** seleciona un fotógrafo en pàrticular \
-    ***Entonces*** se le recargará la pestaña con los distintos Portafolios que tenga el Photógrafo.
+  - ***Dado*** que el cliente se encuentra en la pestaña de 'Portafolio'\
+    ***Cuando*** seleciona un fotógrafo en particular \
+    ***Entonces*** se le recargará la pestaña con los distintos Portafolios que tenga el fotógrafo.
 
 
 - [ ] Como **cliente**, quiero elegir un paquete para agendar una sesión destinada a mi boda (ocasión especial).\

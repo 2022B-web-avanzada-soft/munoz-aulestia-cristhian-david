@@ -37,13 +37,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var Photographer_1 = require("./Entidades/Photographer");
+var Portfolio_1 = require("./Entidades/Portfolio");
+var CRUD_file_js_1 = require("./CRUD_file.js");
 var inquirer = require('inquirer');
 var path_photographers = "./Sources/photographers.txt";
 var arrayPhotographers = [];
-var CRUD_file_js_1 = require("./CRUD_file.js");
-var Portfolio_1 = require("./Entidades/Portfolio");
-//tsc main.ts --target es6
-//Functions
+//tsc main.ts
+//--------------------------------Functions---------------------------------------
 function welcome() {
     console.log('\x1b[1m \x1b[31m Welcome to PholapSC \x1b[0m');
 }
@@ -69,6 +69,7 @@ function toPause() {
         }
     });
 }
+//---------------------------------READ FILE--------------------------------------------
 //Preparation of Files
 function readFiles() {
     return __awaiter(this, void 0, void 0, function () {
@@ -90,6 +91,7 @@ function readFiles() {
         });
     });
 }
+//Destructores del contenido guardado
 function getPhotographers(item) {
     var photographer = new Photographer_1.Photographer(item.name, item.last_name, new Date(item.date_birth), item.id);
     var portfolios = item._portfolio.map(getPortfolios);
@@ -105,6 +107,7 @@ function getPortfolios(item) {
 function getImagesbyPortfolio(item) {
     return item;
 }
+//---------------------------------WRITE FILE--------------------------------------------
 function writeFile() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -120,6 +123,7 @@ function writeFile() {
         });
     });
 }
+//------------------------------------MENU-----------------------------------------------
 function inquirerMenu() {
     return __awaiter(this, void 0, void 0, function () {
         var comprobador, answer;
@@ -173,6 +177,7 @@ function inquirerMenu() {
         });
     });
 }
+//--------------------FUNCTIONS CRUD-----ALTO NIVEL-----------------------
 function createPhotographer() {
     return __awaiter(this, void 0, void 0, function () {
         var respuesta, newPerson, e_1;
@@ -231,107 +236,9 @@ function createPhotographer() {
         });
     });
 }
-function showPhotographers() {
-    return __awaiter(this, void 0, void 0, function () {
-        var e_2;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, readFiles()];
-                case 1:
-                    _a.sent();
-                    console.log(arrayPhotographers);
-                    console.log(arrayPhotographers[0].portfolio());
-                    return [3 /*break*/, 3];
-                case 2:
-                    e_2 = _a.sent();
-                    console.error(e_2);
-                    return [3 /*break*/, 3];
-                case 3:
-                    setTimeout(function () { }, 5000);
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function visualizePortfolio(indexFound) {
-    return __awaiter(this, void 0, void 0, function () {
-        var e_3;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 2, , 3]);
-                    return [4 /*yield*/, readFiles()];
-                case 1:
-                    _a.sent();
-                    console.log(arrayPhotographers[indexFound].portfolio());
-                    return [3 /*break*/, 3];
-                case 2:
-                    e_3 = _a.sent();
-                    console.error(e_3);
-                    return [3 /*break*/, 3];
-                case 3:
-                    setTimeout(function () { }, 5000);
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function searchPhotographerbyID(action) {
-    return __awaiter(this, void 0, void 0, function () {
-        var find_param_1, index_found, e_4;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 11, , 12]);
-                    return [4 /*yield*/, inquirer
-                            .prompt({
-                            type: 'input',
-                            name: 'id_search',
-                            message: 'Write your ID: '
-                        })];
-                case 1:
-                    find_param_1 = _a.sent();
-                    return [4 /*yield*/, readFiles()];
-                case 2:
-                    _a.sent();
-                    index_found = arrayPhotographers.findIndex(function (the_most_search) { return the_most_search.id == find_param_1.id_search; });
-                    if (!(index_found >= 0)) return [3 /*break*/, 9];
-                    if (!(action == 'edit')) return [3 /*break*/, 4];
-                    return [4 /*yield*/, editPhotographer(index_found)];
-                case 3:
-                    _a.sent();
-                    return [3 /*break*/, 8];
-                case 4:
-                    if (!(action == 'delete')) return [3 /*break*/, 6];
-                    return [4 /*yield*/, deletePhotographer(index_found)];
-                case 5:
-                    _a.sent();
-                    return [3 /*break*/, 8];
-                case 6:
-                    if (!(action == 'Visualize portfolio')) return [3 /*break*/, 8];
-                    return [4 /*yield*/, visualizePortfolio(index_found)];
-                case 7:
-                    _a.sent();
-                    _a.label = 8;
-                case 8: return [3 /*break*/, 10];
-                case 9:
-                    console.log('Photographer does not Found');
-                    _a.label = 10;
-                case 10: return [3 /*break*/, 12];
-                case 11:
-                    e_4 = _a.sent();
-                    console.error(e_4);
-                    return [3 /*break*/, 12];
-                case 12: return [2 /*return*/];
-            }
-        });
-    });
-}
 function editPhotographer(index_found) {
     return __awaiter(this, void 0, void 0, function () {
-        var update_Info, e_5;
+        var update_Info, e_2;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -385,8 +292,8 @@ function editPhotographer(index_found) {
                     _a.sent();
                     return [3 /*break*/, 6];
                 case 5:
-                    e_5 = _a.sent();
-                    console.error(e_5);
+                    e_2 = _a.sent();
+                    console.error(e_2);
                     return [3 /*break*/, 6];
                 case 6:
                     setTimeout(function () { }, 3000);
@@ -400,7 +307,7 @@ function editPhotographer(index_found) {
 }
 function deletePhotographer(id) {
     return __awaiter(this, void 0, void 0, function () {
-        var e_6;
+        var e_3;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -416,8 +323,8 @@ function deletePhotographer(id) {
                     _a.sent();
                     return [3 /*break*/, 4];
                 case 3:
-                    e_6 = _a.sent();
-                    console.error(e_6);
+                    e_3 = _a.sent();
+                    console.error(e_3);
                     return [3 /*break*/, 4];
                 case 4:
                     setTimeout(function () { }, 3000);
@@ -425,6 +332,103 @@ function deletePhotographer(id) {
                 case 5:
                     _a.sent();
                     return [2 /*return*/];
+            }
+        });
+    });
+}
+function showPhotographers() {
+    return __awaiter(this, void 0, void 0, function () {
+        var e_4;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, readFiles()];
+                case 1:
+                    _a.sent();
+                    console.log(arrayPhotographers);
+                    return [3 /*break*/, 3];
+                case 2:
+                    e_4 = _a.sent();
+                    console.error(e_4);
+                    return [3 /*break*/, 3];
+                case 3:
+                    setTimeout(function () { }, 5000);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function showPortfolio(indexFound) {
+    return __awaiter(this, void 0, void 0, function () {
+        var e_5;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, readFiles()];
+                case 1:
+                    _a.sent();
+                    console.log(arrayPhotographers[indexFound].portfolio());
+                    return [3 /*break*/, 3];
+                case 2:
+                    e_5 = _a.sent();
+                    console.error(e_5);
+                    return [3 /*break*/, 3];
+                case 3:
+                    setTimeout(function () { }, 5000);
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+function searchPhotographerbyID(action) {
+    return __awaiter(this, void 0, void 0, function () {
+        var find_param_1, index_found, e_6;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 11, , 12]);
+                    return [4 /*yield*/, inquirer
+                            .prompt({
+                            type: 'input',
+                            name: 'id_search',
+                            message: 'Write your ID: '
+                        })];
+                case 1:
+                    find_param_1 = _a.sent();
+                    return [4 /*yield*/, readFiles()];
+                case 2:
+                    _a.sent();
+                    index_found = arrayPhotographers.findIndex(function (the_most_search) { return the_most_search.id == find_param_1.id_search; });
+                    if (!(index_found >= 0)) return [3 /*break*/, 9];
+                    if (!(action == 'edit')) return [3 /*break*/, 4];
+                    return [4 /*yield*/, editPhotographer(index_found)];
+                case 3:
+                    _a.sent();
+                    return [3 /*break*/, 8];
+                case 4:
+                    if (!(action == 'delete')) return [3 /*break*/, 6];
+                    return [4 /*yield*/, deletePhotographer(index_found)];
+                case 5:
+                    _a.sent();
+                    return [3 /*break*/, 8];
+                case 6:
+                    if (!(action == 'Visualize portfolio')) return [3 /*break*/, 8];
+                    return [4 /*yield*/, showPortfolio(index_found)];
+                case 7:
+                    _a.sent();
+                    _a.label = 8;
+                case 8: return [3 /*break*/, 10];
+                case 9:
+                    console.log('Photographer does not Found');
+                    _a.label = 10;
+                case 10: return [3 /*break*/, 12];
+                case 11:
+                    e_6 = _a.sent();
+                    console.error(e_6);
+                    return [3 /*break*/, 12];
+                case 12: return [2 /*return*/];
             }
         });
     });
