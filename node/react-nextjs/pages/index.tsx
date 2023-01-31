@@ -5,7 +5,7 @@ const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
     <h1>Hello Next.js 👋</h1>
     <p>
-      <Link href="/about">About</Link>
+      <Link href="/i_todos">About</Link>
     </p>
   </Layout>
 )

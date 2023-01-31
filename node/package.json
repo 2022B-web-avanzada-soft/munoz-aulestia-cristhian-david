@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "class-transformer": "^0.5.1",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "react-hook-form": "^7.42.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18"
