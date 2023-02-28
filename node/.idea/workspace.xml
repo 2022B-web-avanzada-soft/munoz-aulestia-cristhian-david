@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="632fa6a2-9720-49e3-bd02-25db408dbe21" name="Changes" comment="" />
+    <list default="true" id="632fa6a2-9720-49e3-bd02-25db408dbe21" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/back-end/src/eventos/eventos.gateway.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/back-end/src/eventos/eventos.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/front-end/components/notification_websockets/Notificaciones.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/dto/usuario-create.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/dto/usuario-update.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-Proyecto/Model DB/db.png" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/Model DB/db.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-Proyecto/Model DB/pholapSC_DataBase.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/Model DB/pholapSC_DataBase.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-Proyecto/Model DB/pholapSC_DataBase.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/Model DB/pholapSC_DataBase.mwb.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-Proyecto/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-Proyecto/Sources/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.gateway.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-nextjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-nextjs/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-nextjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-nextjs/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +36,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="tsconfig.json" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -39,7 +62,7 @@
     "WebServerToolWindowFactoryState": "false",
     "javascript.nodejs.core.library.configured.version": "19.1.0",
     "javascript.nodejs.core.library.typings.version": "18.11.9",
-    "last_opened_file_path": "C:/Users/criss/GitHub/munoz-aulestia-cristhian-david/node/react-nextjs/pages",
+    "last_opened_file_path": "C:/Users/criss/GitHub/munoz-aulestia-cristhian-david/node",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -47,22 +70,23 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "C:\\Users\\criss\\GitHub\\munoz-aulestia-cristhian-david\\node\\react-nextjs\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\criss\\GitHub\\munoz-aulestia-cristhian-david\\node\\0-Proyecto-PholapSC\\back-end\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\0-Proyecto-PholapSC\back-end\src" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\react-nextjs\pages" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\react-nextjs\components\e_use_context" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-Examen_Primer_Bimestre" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\04-nestjx-websockets\websockets" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\0-Proyecto\Model DB" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\0-Proyecto\Sources" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript" />
       <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node" />
-      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\01-javascript\proyecto-node" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.main.js">
@@ -144,7 +168,21 @@
       <workItem from="1675169884771" duration="4004000" />
       <workItem from="1675372829095" duration="1723000" />
       <workItem from="1675388487952" duration="1950000" />
-      <workItem from="1675772778331" duration="5464000" />
+      <workItem from="1675772778331" duration="6049000" />
+      <workItem from="1675978337259" duration="7775000" />
+      <workItem from="1676379176376" duration="1531000" />
+      <workItem from="1676435352008" duration="591000" />
+      <workItem from="1676582441601" duration="5371000" />
+      <workItem from="1676653074869" duration="591000" />
+      <workItem from="1676776783132" duration="2798000" />
+      <workItem from="1676860032442" duration="3904000" />
+      <workItem from="1676939393543" duration="7945000" />
+      <workItem from="1677012673348" duration="3696000" />
+      <workItem from="1677188209923" duration="5142000" />
+      <workItem from="1677452367429" duration="687000" />
+      <workItem from="1677453417015" duration="2378000" />
+      <workItem from="1677512427904" duration="16611000" />
+      <workItem from="1677560428093" duration="10271000" />
     </task>
     <servers />
   </component>

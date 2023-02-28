@@ -14,7 +14,8 @@
     "@nestjs/websockets": "^9.3.3",
     "class-transformer": "^0.5.1",
     "inquirer": "^8.0.0",
-    "react-hook-form": "^7.42.1"
+    "react-hook-form": "^7.42.1",
+    "socket.io-client": "^4.6.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.18"

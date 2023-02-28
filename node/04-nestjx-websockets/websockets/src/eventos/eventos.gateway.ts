@@ -2,7 +2,7 @@ import {ConnectedSocket, MessageBody, SubscribeMessage, WebSocketGateway} from "
 import {Socket} from "socket.io";
 
 @WebSocketGateway(
-    8080, //puerto donde esta ecuchando el servidor de websockets
+    11202, //puerto donde esta ecuchando el servidor de websockets
     {
         cors:{
             origin: '*',//Habilitando la conexión desde cualquier IP
