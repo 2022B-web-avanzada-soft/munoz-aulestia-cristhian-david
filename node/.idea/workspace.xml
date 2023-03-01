@@ -7,26 +7,13 @@
     <list default="true" id="632fa6a2-9720-49e3-bd02-25db408dbe21" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/back-end/src/eventos/eventos.gateway.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/back-end/src/eventos/eventos.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/front-end/components/notification_websockets/Notificaciones.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/dto/usuario-create.dto.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/dto/usuario-update.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.entity.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Proyecto/Model DB/db.png" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/Model DB/db.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Proyecto/Model DB/pholapSC_DataBase.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/Model DB/pholapSC_DataBase.mwb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Proyecto/Model DB/pholapSC_DataBase.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/Model DB/pholapSC_DataBase.mwb.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Proyecto/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Proyecto/Sources/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.gateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.gateway.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/eventos/eventos.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-nextjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-nextjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-nextjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/react-nextjs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/0-Proyecto-PholapSC/front-end/pages/reservas_notificaciones.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/front-end/pages/reservas_notificaciones.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +37,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HYcJ6dDGgQ0vsMPociVnpDnQnF" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -183,6 +172,8 @@
       <workItem from="1677453417015" duration="2378000" />
       <workItem from="1677512427904" duration="16611000" />
       <workItem from="1677560428093" duration="10271000" />
+      <workItem from="1677588881753" duration="3290000" />
+      <workItem from="1677614024936" duration="3683000" />
     </task>
     <servers />
   </component>

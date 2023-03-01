@@ -16,6 +16,9 @@ export type reservaSesionFotografica = {
     idPackage: string;
     idClient: string;
 };
+export type unirPhotographer = {
+    idPhotographer: string;
+};
 
 
 export default function () {
@@ -76,8 +79,24 @@ export default function () {
         []
     )
 
-    const unirseSalaEnviarMensajeASala = (data: reservaSesionFotografica) => {
-        if (data.idPackage === 'Boda') {
+    const unirseSalaEnviarNotificacionReserva = (data: reservaSesionFotografica) => {
+        if(data.idPhotographer == 'PholapSC' && data.idPackage === ''){
+            // unimos a la sala
+            const dataEventoUnirseSala = {
+                idPhotographer: data.idPhotographer,
+            };
+            socket.emit(
+                'enviarNotificacion', // Nombre Evento
+                dataEventoUnirseSala, //  Datos evento
+                () => { // Callback o respuesta del evefnto
+                    const nuevoMensaje: unirPhotographer = {
+                        idPhotographer: data.idPhotographer
+                    };
+
+                }
+            );
+
+        } else if (data.idPackage != '') {
             // unimos a la sala
             const dataEventoUnirseSala = {
                 idPhotographer: data.idPhotographer,
@@ -101,7 +120,7 @@ export default function () {
                     setNotificaciones((mensajesAnteriores) => [...mensajesAnteriores, nuevoMensaje]);
                 }
             );
-        } else {
+        } /*else {
             // mandamos mensaje
             const dataEventoEnviarMensajeSala = {
                 idPhotographer: data.idPhotographer,
@@ -125,7 +144,7 @@ export default function () {
                     setNotificaciones((mensajesAnteriores) => [...mensajesAnteriores, notification]);
                 }
             );
-        }
+        }*/
     }
 
     const estaConectado = ()=>{
@@ -155,11 +174,11 @@ export default function () {
                         </Dropdown.Menu>
                     </Dropdown>
 
-                    <div className="col-sm-5">
+                    <div className="col-sm-8">
                         <h1>Reservación Fotográfica</h1>
                         <div className="row">
                             <div className="col-sm-6">
-                                <form onSubmit={handleSubmit(unirseSalaEnviarMensajeASala)}>
+                                <form onSubmit={handleSubmit(unirseSalaEnviarNotificacionReserva)}>
 
                                     <div className="mb-3">
                                         <label htmlFor="nombre-cliente" className="form-label">Nombre: </label>
@@ -253,18 +272,18 @@ export default function () {
                                     <button type="submit"
                                             disabled={!isValid}
                                             className="btn btn-warning">
-                                        Unirse sala
+                                        Enviar Reservación
                                     </button>
                                     <button type="reset"
                                             className="btn btn-danger">
-                                        Reset
+                                        Borrar Campos
                                     </button>
                                 </form>
                             </div>
                         </div>
 
                     </div>
-                    <div className="col-sm-7">
+                    <div className="col-sm-4">
                         {notificaciones.map((mensaje, indice) =>
                             <Notificaciones key={indice}
                                          posicion={mensaje.posicion}

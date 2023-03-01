@@ -5,13 +5,14 @@ import {
     Get,
     HttpCode,
     Param, Post,
-    Put
+    Put, Query
 } from "@nestjs/common";
 import {UsuarioService} from "./usuario.service";
 import {UsuarioUpdateDto} from "./dto/usuario-update.dto";
 import {validate} from "class-validator";
 import {UsuarioCreateDto} from "./dto/usuario-create.dto";
-
+import {UsuarioEntity} from "./usuario.entity";
+import {FindManyOptions, FindOptionsWhere, Like} from "typeorm";
 //@Controller('usuario/asj/')
 //http://localhost:3000/usuario/asj
 
@@ -86,6 +87,39 @@ export class UsuarioController{
             });
         }
         return this.usuarioService.create(nuevoRegistro);
+    }
+
+    @Get("/")//Get /usuario/
+    @HttpCode (200)
+    find(
+        @Query() queryParams
+    ){
+        const consulta: FindManyOptions<UsuarioEntity>={
+
+            skip: queryParams.skip ? +queryParams.skip : 0,
+            take: queryParams.take ? +queryParams.take : 10
+        };
+        const consultaWhere = [] as FindOptionsWhere<UsuarioEntity>[]
+
+        if(queryParams.nombres){
+            consultaWhere.push({
+                nombres: Like('%' + queryParams.nombres + '%'),
+                rol: queryParams.rol ? queryParams.rol : undefined,
+            })
+        }
+        /*
+        if(queryParams.apellidos){
+            consultaWhere.push({
+                apellidos: Like('%' + queryParams.apellidos + '%'),
+                rol: queryParams.rol ? queryParams.rol : undefined,
+            })
+        }
+        */
+
+        if(consultaWhere.length > 0){
+            consulta.where = consultaWhere
+        }
+        return this.usuarioService.find(consulta);
     }
 
 
