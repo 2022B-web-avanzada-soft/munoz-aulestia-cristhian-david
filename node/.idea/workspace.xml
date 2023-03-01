@@ -7,13 +7,11 @@
     <list default="true" id="632fa6a2-9720-49e3-bd02-25db408dbe21" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/back-end/src/eventos/eventos.gateway.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/back-end/src/eventos/eventos.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.entity.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Proyecto-PholapSC/front-end/pages/reservas_notificaciones.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/0-Proyecto-PholapSC/front-end/pages/reservas_notificaciones.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/node.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +171,7 @@
       <workItem from="1677512427904" duration="16611000" />
       <workItem from="1677560428093" duration="10271000" />
       <workItem from="1677588881753" duration="3290000" />
-      <workItem from="1677614024936" duration="3683000" />
+      <workItem from="1677614024936" duration="4921000" />
     </task>
     <servers />
   </component>
@@ -199,6 +197,36 @@
             <State />
           </value>
         </entry>
+        <entry key="b2078a83-545c-4803-b391-53f5b77cdfa7">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$/0-Proyecto-PholapSC/back-end" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="b2078a83-545c-4803-b391-53f5b77cdfa7" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
