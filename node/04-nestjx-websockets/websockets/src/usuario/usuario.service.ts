@@ -1,7 +1,7 @@
 import {Injectable} from "@nestjs/common";
-import {DataSource, FindManyOptions} from "typeorm";
 import {InjectDataSource} from "@nestjs/typeorm";
 import {UsuarioEntity} from "./usuario.entity";
+import {DataSource, FindManyOptions} from "typeorm";
 import {UsuarioCreateDto} from "./dto/usuario-create.dto";
 import {UsuarioUpdateDto} from "./dto/usuario-update.dto";
 
@@ -12,29 +12,30 @@ export class UsuarioService{
         public datasource: DataSource
     ) {}
 
-    public usuarioRepository= this.datasource.getRepository(UsuarioEntity);
-    find(opciones: FindManyOptions<UsuarioEntity>){
-        return this.usuarioRepository.find(opciones);
+    public usuarioRepository = this.datasource.getRepository(UsuarioEntity);
+    find(opciones: FindManyOptions<UsuarioEntity>) {
+        return this.usuarioRepository.find(opciones)
     }
-    findOneById(id: number){
+    findOneById(id: number) {
         return this.usuarioRepository.findOne({
+            // select:{ },
             where: {
-                id: id,
-            }
+                id: id
+            },
         })
     }
-
-    create(datosCrear: UsuarioCreateDto){
+    create(datosCrear: UsuarioCreateDto) {
         return this.usuarioRepository.save(datosCrear);
     }
-
-    update(datosActualizar: UsuarioUpdateDto , id: number){
+    update(datosActualizar: UsuarioUpdateDto, id: number) {
         return this.usuarioRepository.save(
-            {...datosActualizar,id}
+            {...datosActualizar, id}
         );
     }
-
-    delete(id:number){
+    delete(id: number) {
         return this.usuarioRepository.delete(id);
     }
+
+
+
 }

@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632fa6a2-9720-49e3-bd02-25db408dbe21" name="Changes" comment="Backend 2">
-      <change beforePath="$PROJECT_DIR$/../.idea/munoz-aulestia-cristhian-david.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/bdd/bdd.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/bdd/bdd.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/nota/nota.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/04-nestjx-websockets/websockets/src/usuario/usuario.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +66,7 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "C:\\Users\\criss\\GitHub\\munoz-aulestia-cristhian-david\\node\\0-Proyecto-PholapSC\\back-end\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\criss\\GitHub\\munoz-aulestia-cristhian-david\\node\\04-nestjx-websockets\\websockets\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -170,7 +180,11 @@
       <workItem from="1677512427904" duration="16611000" />
       <workItem from="1677560428093" duration="10271000" />
       <workItem from="1677588881753" duration="3290000" />
-      <workItem from="1677614024936" duration="5403000" />
+      <workItem from="1677614024936" duration="7628000" />
+      <workItem from="1677705054537" duration="9000" />
+      <workItem from="1677793667256" duration="2244000" />
+      <workItem from="1678058007491" duration="4748000" />
+      <workItem from="1678662575280" duration="1466000" />
     </task>
     <task id="LOCAL-00001" summary="Backend">
       <created>1677631161795</created>
@@ -186,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677631311524</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Backend 2">
+      <created>1677631613265</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677631613265</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
