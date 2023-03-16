@@ -18,7 +18,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
               crossOrigin="anonymous"></link>
 
     </Head>
-      <div>
+{/*      <div>
           <header>
               <nav>
                   <Link href="/">Home</Link> | <Link href="/about">Sesiones</Link> |{' '}
@@ -31,7 +31,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
               <hr />
               <span>I'm here to stay (Footer)</span>
           </footer>
-      </div>
+      </div>*/}
 
 
   </div>
