@@ -14,6 +14,14 @@ export class PortfolioEntity{
     })
     name: string; //nombre campo
 
+    @Column({ //columna en la DB
+        name: 'photo', //nombre campo DB
+        type: 'varchar', //tipo campo DB
+        length: 100, //longitud campo DB
+        nullable: true, //si es mullable
+    })
+    photo: string; //nombre campo
+
     @ManyToOne(
         ()=> PhotographerEntity, //Entidad Papa
         (instanciaPhotographerEntity)=>

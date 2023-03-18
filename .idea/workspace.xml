@@ -13,6 +13,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node/0-Proyecto-PholapSC/back-end/src/photographer/photographer.controller.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node/0-Proyecto-PholapSC/back-end/src/photographer/photographer.service.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node/0-Proyecto-PholapSC/back-end/src/portfolio/portfolio.controller.ts" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/node/0-Proyecto-PholapSC/back-end/src/portfolio/portfolio.service.ts" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -37,6 +43,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\criss\GitHub\munoz-aulestia-cristhian-david\node\react-nextjs\pages" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +59,10 @@
       <workItem from="1678853703329" duration="63000" />
       <workItem from="1678853785628" duration="25254000" />
       <workItem from="1678946672525" duration="4135000" />
+      <workItem from="1678971866382" duration="11577000" />
+      <workItem from="1679004004709" duration="10172000" />
+      <workItem from="1679020833436" duration="291000" />
+      <workItem from="1679021133807" duration="50905000" />
     </task>
     <servers />
   </component>

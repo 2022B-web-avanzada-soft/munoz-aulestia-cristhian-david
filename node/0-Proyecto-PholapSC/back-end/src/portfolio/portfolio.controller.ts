@@ -1,6 +1,7 @@
-import {BadRequestException, Body, Controller, Delete, Get, HttpCode, Param, Post, Query} from "@nestjs/common";
+import {Body, Controller, Delete, Get, HttpCode, Param, Post, Query} from "@nestjs/common";
 import {PortfolioService} from "./portfolio.service";
 import {PortfolioEntity} from "./portfolio.entity";
+import {PhotographerService} from "../photographer/photographer.service";
 
 @Controller('portfolio')
 
@@ -34,10 +35,9 @@ export class PortfolioController{
     async create(
         @Body() bodyParams
     ){
-        const newPortfolio = new PortfolioEntity();
-        newPortfolio.name = bodyParams.name;
+        //vemos si existe photograpfo con ese id
 
-        return this.portofolioService.create(newPortfolio);
+        return this.portofolioService.create(bodyParams);
     }
 
     @Delete("/:id")

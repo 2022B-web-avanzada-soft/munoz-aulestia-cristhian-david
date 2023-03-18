@@ -1,10 +1,9 @@
+
 import {BadRequestException, Body, Controller, Delete, Get, HttpCode, Param, Post, Put, Query} from "@nestjs/common";
 import {PhotographerService} from "./photographer.service";
 import {PhotographerCreateDto} from "./dto/photographer-create.dto";
 import {validate} from "class-validator";
 import {PhotographerUpdateDto} from "./dto/photographer-update.dto";
-import {FindManyOptions} from "typeorm";
-import {PhotographerEntity} from "./photographer.entity";
 
 @Controller('photographer')
 
@@ -93,7 +92,6 @@ export class PhotographerController{
         );
     }
 
-
     //Eliminamos un objeto Photographer por su id
     @Delete("/:id") // DELETE /usuario/:id
     @HttpCode(200)
@@ -102,8 +100,5 @@ export class PhotographerController{
     ) {
         return this.photographerService.delete(+params.id);
     }
-
-
-
 
 }
